@@ -9,12 +9,15 @@
         @foreach ($movies as $movie)
             <li>
                 <a href="{{ route('show', $movie->id) }}">
-                   Title: 
-                   <span>
+                    Title: 
+                    <span>
                         {{ $movie->title }}
-                   </span>
-                   <span>
-                    <a href="{{ route('edit', $movie->id) }}">EDIT</a>
+                    </span>
+                    <span>
+                        <a href="{{ route('edit', $movie->id) }}">EDIT</a>
+                    </span>
+                    <span class="delete">
+                        <a href="{{ route('delete', $movie->id) }}">DELETE</a>
                     </span>
                 </a>
             </li>

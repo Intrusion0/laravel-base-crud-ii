@@ -63,4 +63,13 @@ class HomeController extends Controller
         return redirect()->route('show', $movie->id);
     }
 
+    public function delete($id) {
+
+        $movie = Movie::findOrFail($id);
+
+        $movie->delete();
+
+        return redirect()->route('home');
+    }
+
 }
