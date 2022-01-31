@@ -13,6 +13,9 @@
                    <span>
                         {{ $movie->title }}
                    </span>
+                   <span>
+                    <a href="{{ route('edit', $movie->id) }}">EDIT</a>
+                    </span>
                 </a>
             </li>
         @endforeach

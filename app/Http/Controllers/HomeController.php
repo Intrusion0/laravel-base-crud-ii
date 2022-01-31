@@ -41,4 +41,26 @@ class HomeController extends Controller
         return redirect()->route('show', $movie->id);
     }
 
+    public function edit($id) {
+        
+        $movie = Movie::findOrFail($id);
+
+        return view('pages.edit', compact('movie'));
+    }
+
+    public function update(Request $request, $id) {
+
+        $data = $request->validate([
+            'title' => 'required|string|max:255',
+            'subtitle' => 'required|string|max:255',
+            'release_date' => 'required|date'
+        ]);
+
+        $movie = Movie::findOrFail($id);
+
+        $movie->update($data);
+
+        return redirect()->route('show', $movie->id);
+    }
+
 }
