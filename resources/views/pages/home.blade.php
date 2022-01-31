@@ -4,7 +4,7 @@
     <ul>
         @foreach ($movies as $movie)
             <li>
-                <a href="#">
+                <a href="{{ route('show', $movie->id) }}">
                    Title: 
                    <span>
                         {{ $movie->title }}
